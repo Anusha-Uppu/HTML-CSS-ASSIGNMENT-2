@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-2</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <nav>
+        <button id="home" >Home</button>
+        <button id="services" >Services</button>
+        <button id="team">Team</button>
+        <button id="contact">Contact</button>
+        <p id="anu">Welcome</p>
+    </nav>
+    <script>
+        document.getElementById('home').onclick=function(){
+            document.getElementById('anu').innerHTML="Welcome to home";
+           
+        }
+        document.getElementById('services').onclick=function(){
+            document.getElementById('anu').innerHTML="Welcome to services";
+           
+        }
+        document.getElementById('team').onclick=function(){
+            document.getElementById('anu').innerHTML="Welcome to team";
+           
+        }
+        document.getElementById('contact').onclick=function(){
+            document.getElementById('anu').innerHTML="Welcome to contact";
+           
+        }
+    </script>
+</body>
+</html>

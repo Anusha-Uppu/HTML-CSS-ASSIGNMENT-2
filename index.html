@@ -8,29 +8,74 @@
 </head>
 <body>
     <div class="topnav">
-        <button id="home" >Home</button>
-        <button id="services" >Services</button>
-        <button id="team">Team</button>
-        <button id="contact">Contact</button>   
+        <button id="home" onclick="show('first')" >Home</button>
+        <button id="services" onclick="show('car')" >Services</button>
+        <button id="team" onclick="show('ss')">Team</button>
+        <button id="contact" onclick="show('form')">Contact</button>   
     </div>
     <h1 id="anu">Welcome</h1>
+    <div class="container">
+       <div id="first" class="first">
+        Lamborghini is a brand known for its extroverted styling and brash performance,
+        which is embodied perfectly by the V-10–powered Huracán supercar. With 600-plus 
+        horsepower roaring just behind the cabin, the Huracán delivers heart-pounding acceleration 
+        with a spine-tingling soundtrack to match. It's just as home on the road as it is on a race track,
+         and in both situations it delivers the razor-sharp handling you'd expect of a six-figure sports car.
+          To turn up the insanity even further, a rally-inspired Huracán Sterrato with a raised suspension, 
+          a roof-top snorkel air intake, and special all-terrain tires is ready to do some light off-roading—and in our experience
+           it's hilariously fun. The same can be said of the rest of the Huracán lineup, too, and its boisterous personality 
+           and extroverted looks imbue it with a charming outrageousness that rivals from Ferrari and McLaren can't quite match. 
+       </div>
+        <div id="car" class="first">
+            The Huracán is rated buy the EPA for 13 mpg in the city and 18 on the highway
+             for a combined rating of 15 mpg. Not that anyone in the market for a brand-new Lambo
+              will care one way or the other. But it's worth noting that all Huracán models are 
+              penalized for their low fuel efficiency ratings with a gas guzzler tax. 
+              We haven't had a chance to subject any variant to our 75-mph highway fuel
+               economy route, which is part of our extensive testing regimen,
+                so we can't comment on the Lambo's real-world efficiency. 
+                For more information about the Huracán's fuel economy, visit the EPA's website.
+        </div>
+        <div id="ss" class="first">
+            Unlike most cars, infotainment features are arguably the least interesting 
+            thing about a six-figure supercar. Still, Lamborghini outfits the Huracán with 
+            an 8.4-inch touchscreen that controls functions such as the audio system, climate settings, 
+            and other media content. Along with Apple CarPlay capability, the Lambo gets Amazon Alexa integration 
+            that provides voice-control technology that should theoretically reduce distracted driving.
+        </div>
+        <div id="form" class="first" >
+            <div>
+               <label>Enter Your Namke</label>
+               <input type="text" id="name">     
+            </div>
+            <div>
+                <label>Enter your Password</label>
+                <input type="password" id="password">
+            </div>
+            <div>
+                <button onclick="printing()">Submit</button>
+            </div>
+            <div>
+                <label id="res1"></label>
+                <label id="res2"></label>
+            </div>
+        </div>
+    </div>
     <script>
-        document.getElementById('home').onclick=function(){
-            document.getElementById('anu').innerHTML="Welcome to home";
-           
+       function show(element){
+        const values=document.getElementsByClassName('first');
+        for(const tab of values){
+            tab.style.display="none";
         }
-        document.getElementById('services').onclick=function(){
-            document.getElementById('anu').innerHTML="Welcome to services";
-           
-        }
-        document.getElementById('team').onclick=function(){
-            document.getElementById('anu').innerHTML="Welcome to team";
-           
-        }
-        document.getElementById('contact').onclick=function(){
-            document.getElementById('anu').innerHTML="Welcome to contact";
-           
-        }
+        document.getElementById(element).style.display="flex";
+       }
+       function printing(){
+          const pp=document.getElementById('form');
+          var result1=document.getElementById('name').value;
+          var result2=document.getElementById('password').value;
+        document.getElementById('res1').innerHTML=result1;
+        document.getElementById('res2').innerHTML=result2;
+       }
     </script>
 </body>
 </html>

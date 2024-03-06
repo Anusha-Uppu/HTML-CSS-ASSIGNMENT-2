@@ -16,11 +16,14 @@ button:hover{
     
 }
 .show{
-    width: 100%;
+    /* width: 100%; */
+    /* height: 100%; */
     background-color: coral;
     padding: 25px;
     color: white;
     font-size: 25px;
+    display: block;
+    /* flex-direction: column; */
 
 }
 .topnav{

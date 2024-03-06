@@ -11,10 +11,10 @@
         <button id="home" onclick="show('first')" >Home</button>
         <button id="services" onclick="show('car')" >Services</button>
         <button id="team" onclick="show('ss')">Team</button>
-        <button id="contact" onclick="show('form')">Contact</button>   
+        <button id="contact" onclick="show('ff')">Contact</button>  
+        <button id="assignment3" onclick="show('assignment')">Assignment-3</button> 
     </div>
     <h1 id="anu">Welcome</h1>
-    <div class="container">
        <div id="first" class="first">
         Lamborghini is a brand known for its extroverted styling and brash performance,
         which is embodied perfectly by the V-10–powered Huracán supercar. With 600-plus 
@@ -43,24 +43,33 @@
             and other media content. Along with Apple CarPlay capability, the Lambo gets Amazon Alexa integration 
             that provides voice-control technology that should theoretically reduce distracted driving.
         </div>
-        <div id="form" class="first" >
-            <div>
-               <label>Enter Your Namke</label>
+        <div id="ff" class="first" >
+               <div>
+               <label>Enter Your Name</label>
                <input type="text" id="name">     
             </div>
-            <div>
+                 <div>
                 <label>Enter your Password</label>
                 <input type="password" id="password">
+                <br>
             </div>
-            <div>
+       
+                <div>
                 <button onclick="printing()">Submit</button>
-            </div>
-            <div>
+                </div>
+                <div> 
                 <label id="res1"></label>
                 <label id="res2"></label>
-            </div>
+                </div>
+        
         </div>
-    </div>
+        <div id="assignment" class="first">
+            <p id="time"></p>
+            <button onclick="start()">Start</button>
+            <button onclick="stop()">stop</button>
+            <button onclick="clearInterval(tt)">resume</button>
+        </div>
+    
     <script>
        function show(element){
         const values=document.getElementsByClassName('first');
@@ -68,6 +77,7 @@
             tab.style.display="none";
         }
         document.getElementById(element).style.display="flex";
+        document.getElementById(element).classList.add('show');
        }
        function printing(){
           const pp=document.getElementById('form');
@@ -76,6 +86,20 @@
         document.getElementById('res1').innerHTML=result1;
         document.getElementById('res2').innerHTML=result2;
        }
+       var tt;
+       function start(){
+     tt=setInterval(fun,1000);
+        let count=0;
+        function fun(){
+            count++;
+            document.getElementById('time').innerHTML=count;
+        }
+       }
+     
+        function stop(){
+            clearInterval(tt);
+            document.getElementById('time').innerHTML=0;
+        }
     </script>
 </body>
 </html>
